@@ -4,7 +4,11 @@ import sys
 from src import *
 
 def main(argv):
-    pynsour = Pynsour('./bot.yaml')
+    if( len(sys.argv) > 1):
+        conf = sys.argv[1]
+    else:
+        conf = 'bot.yaml'
+    pynsour = Pynsour("./%s" % (conf))
     return pynsour.run()
 
 if __name__ == "__main__":
